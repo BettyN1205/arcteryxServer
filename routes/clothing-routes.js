@@ -6,7 +6,7 @@ router.get("/:id", async (req, res) => {
     const itemId = req.params.id;
     const data = await knex("man_shirt")
     .select('man_shirt.*')
-    .where('man_shirt.Product_ID', '=', itemId);
+    .where('man_shirt.product_id', '=', itemId);
     res.status(200).json(data);
   } catch (err) {
     res.status(400).send(`Error retrieving Users: ${err}`);
